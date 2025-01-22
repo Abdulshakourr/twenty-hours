@@ -1,29 +1,25 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Route, Routes } from "react-router";
+import Home from "./pages/home";
+import SignIn from "./pages/(auth)/signin";
+import Dashboard from "./pages/dashboard/dashboard";
+import AuthLayout from "./pages/layout/authLayout";
+import { useEffect } from "react";
+import SKillDetail from "./pages/dashboard/SKillDetail";
 
 function App() {
-  console.log(useState());
-
+  useEffect(() => {
+    document.title = "20 Hours of React";
+  }, []);
   return (
     <>
-      <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-3 md:mt-5">
-              Master any skill and monitor in simple easy way
-            </h1>
-            <p className="md:text-xl text-base text-gray-500 mt-4">
-              this is the easies and most compeling way to master any skill
-            </p>
-          </div>
-          <div className="bg-blue-300 h-32 flex items-center justify-center">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Start Learning
-            </button>
-          </div>
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route element={<AuthLayout />}>
+          <Route path="/signin" element={<SignIn />} />
+        </Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/dashboard/:id" element={<SKillDetail />} />
+      </Routes>
     </>
   );
 }
