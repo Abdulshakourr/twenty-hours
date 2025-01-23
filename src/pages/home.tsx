@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
               variant={"outline"}
               className="text-gray-600 py-3 text-md"
             >
-              Start Learning
+              <Link to="dashboard">Start Learning</Link>
             </Button>
           </div>
           {/* the image shawcase */}

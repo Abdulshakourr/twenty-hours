@@ -15,7 +15,7 @@ export default function SkillDetail() {
   };
 
   return (
-    <div className=" min-h-screen bg-background py-12 px-4 sm:px-6 lg:px-8 ">
+    <div className=" min-h-screen bg-background py-6 px-4 sm:px-6 lg:px-8 ">
       <div className="w-full max-w-6xl mx-auto ">
         <Link to="/dashboard">
           <Button variant="outline">
@@ -23,6 +23,14 @@ export default function SkillDetail() {
             <ArrowLeftIcon className="w-5 h-5" /> Back to Dashboard
           </Button>
         </Link>
+        <div className="space-y-4 bg-red-500">
+          <h1 className="text-2xl font-bold">{skill.name}</h1>
+
+          <div>
+            <Button>Start</Button>
+            <Button>Pause</Button>
+          </div>
+        </div>
       </div>
     </div>
   );

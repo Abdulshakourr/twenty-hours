@@ -5,6 +5,7 @@ import Dashboard from "./pages/dashboard/dashboard";
 import AuthLayout from "./pages/layout/authLayout";
 import { useEffect } from "react";
 import SKillDetail from "./pages/dashboard/SKillDetail";
+import SignupForm from "./pages/(auth)/signup";
 
 function App() {
   useEffect(() => {
@@ -15,10 +16,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route element={<AuthLayout />}>
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/dashboard/:id" element={<SKillDetail />} />
         </Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
-        <Route path="/dashboard/:id" element={<SKillDetail />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignupForm />} />
       </Routes>
     </>
   );

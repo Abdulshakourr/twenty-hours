@@ -12,7 +12,7 @@ export default function SkillDisplay({ skills }: { skills: Skill[] }) {
   return (
     <div className="space-y-4">
       {skills.map((skill) => (
-        <Card>
+        <Card key={skill.id}>
           <div
             key={skill.id}
             className="rounded-sm  py-4 px-6  transition-all hover:shadow-md"
